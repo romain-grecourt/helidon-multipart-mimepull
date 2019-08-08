@@ -70,7 +70,7 @@ public final class Main {
         server.start()
             .thenAccept(ws -> {
                 System.out.println(
-                        "WEB server is up! http://localhost:" + ws.port() + "/greet");
+                        "WEB server is up! http://localhost:" + ws.port() + "/ui");
                 ws.whenShutdown().thenRun(()
                     -> System.out.println("WEB server is DOWN. Good bye!"));
                 })
