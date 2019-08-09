@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.logging.LogManager;
 
 import io.helidon.config.Config;
-import io.helidon.media.jsonp.server.JsonSupport;
+import io.helidon.media.jackson.server.JacksonSupport;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerConfiguration;
 import io.helidon.webserver.StaticContentSupport;
@@ -93,7 +93,7 @@ public final class Main {
      */
     private static Routing createRouting(Config config) {
         return Routing.builder()
-                .register(JsonSupport.create())
+                .register(JacksonSupport.create())
                 .register("/ui", StaticContentSupport.builder("WEB")
                         .welcomeFileName("index.html")
                         .build())
